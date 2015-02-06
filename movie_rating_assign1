@@ -1,0 +1,99 @@
+movies=Hash.new
+
+puts "select an option"
+
+puts "1.Add a movie review \n 2.Update a movie review \n 3.Delete a movie review \n 4.exit"
+
+option=gets.chomp
+ 
+until option==4
+
+case option 
+
+
+when "1"
+    
+puts "enter movie to be rated"
+    
+movie_name=gets.chomp
+    
+if  movies.has_key?(movie_name)
+        
+puts "the movie is already rated"
+    
+else 
+        
+puts "give the rating"
+        
+movie_rating=gets.chomp
+        
+movies.store(movie_name,movie_rating)
+        
+puts "the movie has been rated"
+    
+end
+
+
+when "2"
+     
+puts "enter the movie to be updated"
+    
+movie_name=gets.chomp
+    
+if  movies.has_key?(movie_name)
+        
+movies.delete(movie_name)
+        
+puts "enter the new rating"
+        
+movie_rating=gets.chomp
+        
+movies.store(movie_name,movie_rating)
+        
+puts "successfully updated"
+    
+else 
+        
+puts "the movie doesn't exist in review list"
+    
+end
+
+
+when "3"
+     
+puts "enter the movie to be deleted"
+     
+movie_name=gets.chomp
+    
+if  movies.has_key?(movie_name)
+        
+movies.delete(movie_name)
+        
+puts "successfully deleted"
+    
+else 
+        
+puts "the movie doesn't exist in review list"
+    
+end
+
+
+when "4"
+    
+puts"exit"
+    
+break
+
+
+else 
+    
+puts "please enter valid option"
+
+end 
+ 
+
+puts "select an option"
+    
+option=gets.chomp
+
+end
